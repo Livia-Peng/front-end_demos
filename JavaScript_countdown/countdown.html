@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" >
+    <title>倒计时</title>
+
+</head>
+<body>
+
+<div class="content1">
+    <button id="show" onclick="showTime()">显示当前时间</button><br/>
+    <button onclick="countdown()">距离设置时间还有<span  id="timeShow"></span>天</button><br/>
+    <button onclick="freshTime()">还剩 <span id="LeftTime"></span></button>
+</div>
+
+<script language="JavaScript"  type="text/javascript">
+    //补位处理
+    function checkTime(i){
+        if(i<10){
+            i='0'+i;
+        }
+        return i;
+    }
+
+    function showTime(){
+        var now=new Date();              //获取时间日期
+        var year= now.getFullYear()  ;   //返回年份（如2014）
+        var month= now.getMonth()+1  ;   //返回月份（0-11）
+        var day= now.getDate() ;         //返回日期（1-31）
+        var h=  now.getHours() ;         //返回小时（0-23）
+        var m=  now.getMinutes() ;       //返回分钟
+        var s=  now.getSeconds()  ;      //返回秒数
+
+        h=checkTime(h);
+        m=checkTime(m);
+        s=checkTime(s);
+
+        var weekday= ["星期日", "星期一", "星期二", "星期三", "星期四", "星期五","星期六"];
+
+        document.getElementById("show").innerHTML=
+                ""+year+"年"
+                +month+"月"
+                +day+"日 "
+                + weekday[now.getDay()]
+                +checkTime(h)
+                +":"+checkTime(m)
+                +":"+checkTime(s);
+        t=setTimeout('showTime()',500);
+    }
+
+    function countdown(){
+        var time_date= new Date("2017,3,25");     //自定义结束时间
+        var now =  new Date() ;    //获取当前时间
+        var date = time_date.getTime() - now.getTime();    //得出的为毫秒
+        var time = Math.ceil(date/(1000 * 60 * 60 * 24))  ;  //1000 * 60 * 60 * 24一天的秒数
+        if(time > 0 ){
+            document.getElementById('timeShow').innerHTML = time;
+        }
+    }
+
+    function freshTime()
+    {
+        var end_time=new Date("2017/3/7,12:20:12");//结束时间
+        var now=new Date();              //获取时间日期
+        var left_time= parseInt((end_time.getTime() - now.getTime())/1000);  //得出秒
+        var d= parseInt(left_time/(60 * 60 * 24));
+        var h= parseInt(left_time/(60*60)%24) ;
+        var m= parseInt(left_time/60%60) ;
+        var s= parseInt(left_time%60) ;
+
+        document.getElementById("LeftTime").innerHTML=d+"天"+h+"小时"+m+"分"+s+"秒";
+        if(left_time<=0){
+            document.getElementById("LeftTime").innerHTML="团购已结束";
+            clearInterval(sh);
+        }
+    }
+
+</script>
+</body>
+</html>
