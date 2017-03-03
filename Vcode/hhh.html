@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>实现验证码</title>
+</head>
+<body>
+<form method="post" action="from.php">
+    <p>
+        验证码图片：
+        <img id="code_img" src="code.php? r=<?php echo rand(); ?>" border="1" width="200" height="60">
+        <a href="javascript:void(0)" onclick="document.getElementById('code_img').src='code.php?r='+Math.random()">看不清换一个</a>
+    </p>
+    <p>请输入图片中的内容：<input type="text" name="authcode" value="" /></p>
+    <p><input type="submit" value="提交"></p>
+</form>
+
+</body>
+</html>
