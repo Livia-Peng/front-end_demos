@@ -6,6 +6,8 @@ h1{
 	text-align:center;
 }
 
+img{height: 170px}
+
 .container{
 	width:960px; 
 	height:450px; 
@@ -14,7 +16,7 @@ h1{
 }
 
 .container img{
-	padding:10px 10px 15px; 
+	padding:10px 10px 15px;
 	background:white; 
 	border:1px solid #ddd; 
 	box-shadow:2px 2px 3px rgba(50, 50, 50, 0.4);
@@ -52,7 +54,7 @@ h1{
 .pic3
 {
 	bottom: 0; 
-	right: 0; 
+	left: 750px;
 	-webkit-transform: rotate(5deg); 
 	-moz-transform: rotate(5deg); 
 	transform: rotate(5deg);
@@ -61,7 +63,7 @@ h1{
 .pic4
 {
 	bottom:0; 
-	left:300px; 
+	left:350px;
 	-webkit-transform: rotate(-10deg); 
 	-moz-transform: rotate(-10deg); 
 	transform: rotate(-10deg);
@@ -87,8 +89,8 @@ h1{
 
 .pic7
 {
-	top: 0; 
-	left: 850px; 
+	top: 70px;
+	left: 800px;
 	-webkit-transform: rotate(20deg); 
 	-moz-transform: rotate(20deg); 
 	transform: rotate(20deg);
@@ -96,8 +98,8 @@ h1{
 
 .pic8
 {
-	bottom: -20px; 
-	right: 630px; 
+	bottom: 50px;
+	right: 600px;
 	-webkit-transform: rotate(5deg); 
 	-moz-transform: rotate(5deg); 
 	transform: rotate(5deg);
@@ -105,7 +107,7 @@ h1{
 
 .pic9
 {
-	top: 90px; 
+	top: 150px;
 	left: 550px; 
 	-webkit-transform: rotate(15deg); 
 	-moz-transform: rotate(15deg); 
@@ -115,7 +117,7 @@ h1{
 .pic10
 {
 	left:180px; 
-	top:20px; 
+	top:50px;
 	-webkit-transform: rotate(-10deg); 
 	-moz-transform: rotate(-10deg); 
 	transform: rotate(-10deg);
