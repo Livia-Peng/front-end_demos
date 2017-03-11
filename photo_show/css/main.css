@@ -20,18 +20,18 @@ img{height: 170px}
 	background:white; 
 	border:1px solid #ddd; 
 	box-shadow:2px 2px 3px rgba(50, 50, 50, 0.4);
-	-webkit-transition:all 0.5s ease-in;
-	-moz-transition:all 0.5s ease-in;
-	transition:all 0.5s ease-in; 
+	-webkit-transition:all 0.5s ease-in;			 /*chrome、Safari*/
+	-moz-transition:all 0.5s ease-in;				 /*Firefox*/
+	transition:all 0.5s ease-in;                     /*元素由样式1转换到样式2需要的时间，加在基本元素上*/
 	position:absolute; 
-	z-index:1;
+	z-index:1;										 /*元素的上下层设置，值越大越靠前*/
 }
 
 .container img:hover{
-	box-shadow:15px 15px 20px rgba(50, 50, 50, 0.4); 
+	box-shadow:15px 15px 20px rgba(50, 50, 50, 0.4);   /* x轴偏移 y轴偏移*/
 	-webkit-transform:rotate(0deg) scale(1.20); 
 	-moz-transform:rotate(0deg) scale(1.20); 
-	transform:rotate(0deg) scale(1.20); 
+	transform:rotate(0deg) scale(1.20);             /* rotate旋转角度，scale缩放倍数，skew扭曲元素*/
 	z-index:2;
 }
 
