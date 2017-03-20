@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>方块旋转</title>
+    <style>
+        .mainDiv{
+            width:100px;
+            height:100px;
+            margin:100px auto;
+            text-align: center;
+            line-height: 100px;
+            font-weight: bold;
+            color:#ddd;
+            background:#ddd;
+            border:1px solid #ddd;
+            -webkit-transform:rotate(0deg) scale(1);
+            -moz-transform:rotate(0deg) scale(1);
+            transform:rotate(0deg) scale(1);
+            -webkit-transition:2s;
+            -moz-transition:2s;
+            transition:2s;
+
+        }
+        .mainDiv:hover{
+            color:yellow;
+            background:red;
+            -webkit-transform:rotate(360deg) scale(2);
+            -moz-transform:rotate(360deg) scale(2);
+            transform:rotate(360deg) scale(2);
+        }
+    </style>
+</head>
+<body>
+<div class="mainDiv">聚焦旋转</div>
+</body>
+</html>
