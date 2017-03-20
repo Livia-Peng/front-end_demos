@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>图片展示</title>
+
+    <link href="css/exhibit.css" rel="stylesheet" type="text/css">
+
+</head>
+<body>
+<div class="demo" id="1">
+    <ul>
+        <li>
+            <img src="images/1.jpg" />
+            <a>空山新雨后，天气晚来秋。<br/>
+                明月松间照，清泉石上流。<br/>
+                竹喧归浣女，莲动下渔舟。<br/>
+                随意春芳歇，王孙自可留。</a>
+        </li>
+        <li>
+            <img src="images/2.jpg" />
+            <a>人生除泛海，便到洞庭波。<br/>
+                驾浪沉西日，吞空接曙河。<br/>
+                虞巡竟安在，轩乐讵曾过。<br/>
+                唯有君山下，狂风万古多。</a>
+        </li>
+        <li>
+            <img src="images/3.jpg" />
+            <a>中岁颇好道，晚家南山陲。<br/>
+                兴来每独往，胜事空自知。<br/>
+                行到水穷处，坐看云起时。<br/>
+                偶然值林叟，谈笑无还期。</a>
+        </li>
+    </ul>
+</div>
+
+<script>
+    function showDetail(){
+        var pics = document.getElementById('1').getElementsByTagName('li');
+        for(var i = 0; i < pics.length ; i++){
+            pics[i].onmouseover = function (){
+                this.getElementsByTagName('a')[0].style.top = 0;
+            };
+            pics[i].onmouseout = function (){
+                this.getElementsByTagName('a')[0].style.top = 180 +'px';
+            };
+        }
+    }
+    showDetail();
+</script>
+
+</body>
+</html>
