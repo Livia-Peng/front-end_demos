@@ -17,7 +17,7 @@ window.onload = function(){
             oBox.appendChild(oPic);
 
             var oImg = document.createElement('img');
-            oImg.src = './images/' + Math.round( Math.random()*10 ) + '.jpg';
+            oImg.src = './images/' + Math.round( Math.random()*20 ) + '.jpg';
             oPic.appendChild(oImg);
 
             waterfall();
