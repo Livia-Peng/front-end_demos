@@ -1,0 +1,22 @@
+*{margin: 0;padding: 0;}
+
+li{list-style-type: none;}
+
+#main{
+    width:1080px;
+    margin-top: 20px;
+    margin-left: auto;
+    margin-right: auto;
+    position: relative;
+}
+
+.box{float: left; padding: 15px 0 0 15px;}
+
+.pics{
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-shadow: 0 0 5px #ccc;
+}
+
+.pics img{width: 180px;height: auto;cursor: pointer;}
