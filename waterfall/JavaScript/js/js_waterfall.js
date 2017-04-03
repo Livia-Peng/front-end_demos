@@ -44,7 +44,6 @@ function waterfall(){
 }
 
 function checkScroll(){
-    var oParents = document.getElementById('main');
     var aPics = document.getElementsByTagName('li');
     var lastPicH=aPics[aPics.length-1].offsetTop+Math.floor(aPics[aPics.length-1].offsetHeight/2);
     var scrollTop = document.body.scrollTop || document.documentElement.scrollTop;
