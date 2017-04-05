@@ -47,13 +47,13 @@ body{background: #f0f2f1;}
 #main{
     width: inherit;
     height: 390px;
-    background: #e7e7e7;
+    background: #f0f2f1;
 }
 #main span{
     width: 94px;
     height: 77px;
-    border-right: 1px solid #ddddd8;
-    border-top: 1px solid #ddddd8;
+    border-right: 1px solid #dff0d8;
+    border-top: 1px solid #dff0d8;
     float: left;
     font-size: 32px;
     text-align: center;
@@ -66,4 +66,8 @@ body{background: #f0f2f1;}
     border-right: none;
     color: #fff;
 }
-#main span:hover{background: #a9a9a9;}
+#main span:hover{background: #e1e1e1;}
+
+#main span:active{
+    box-shadow: 0 0 5px 5px #fff;
+}

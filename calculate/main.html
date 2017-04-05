@@ -2,18 +2,16 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>轻量级计算器</title>
-
+    <title>JavaScript实现轻量级计算器</title>
     <link href="css/style.css" type="text/css" rel="stylesheet" />
     <script src="js/script.js" type="text/javascript" rel="stylesheet"></script>
-
 </head>
 <body>
 <div id="box">
     <div id="top">
         <p>Lightweight Calculator by PYJ</p>
-        <input type="text" style="margin-top: 120px;" disabled/>
-        <input type="text" style="margin-top: 190px;" value=""/>
+        <input id="screen0" type="text" style="margin-top: 100px;"/>
+        <input id="screen1" type="text" style="margin-top: 190px;" />
     </div>
     <div id="main">
         <span class="div1">C</span>
@@ -25,7 +23,7 @@
         <span class="div2">8</span>
         <span class="div2">9</span>
         <span class="div1">×</span>
-        
+
         <span class="div2">4</span>
         <span class="div2">5</span>
         <span class="div2">6</span>
