@@ -62,12 +62,7 @@ body{background: #f0f2f1;}
 }
 .div1{color: orangered;}
 .div2{color: #000;}
-.div3{
-    border-right: none;
-    color: #fff;
-}
-#main span:hover{background: #e1e1e1;}
+.div3{border-right: none;color: #fff;}
 
-#main span:active{
-    box-shadow: 0 0 5px 5px #fff;
-}
+#main span:hover{background: #e1e1e1;}
+#main span:active{box-shadow: 0 0 5px 5px #fff;}

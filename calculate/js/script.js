@@ -12,18 +12,16 @@ window.onload = function(){
 
 function calculate(screen0,screen1){
     var box = document.getElementById('main'), //获取按钮盒子
-        count = 0,                             //记录显示器字符或数字个数
-        bracket = false;                       //是否已有左括号
+        count = 0;                             //记录显示器字符或数字个数
 
     box.onclick = function(e){
-        var symbol = e.target.innerText;
+        var symbol = e.target.innerText;           //获取按钮字符
         if((screen1.value + symbol).length > 40){
             alert('Content exceeds the maximum length!');
             return null;
         }
         //清零
         if(symbol == 'C'){
-            bracket = false;
             count = 0;
             screen0.value = null;
             screen1.value = null;
@@ -37,14 +35,6 @@ function calculate(screen0,screen1){
                     screen1.value = screen1.value.slice(0,-1);
                     count--;
                 }
-            }else if(symbol == '()'){
-                if(!bracket){
-                    screen1.value += '(';
-                    bracket = true;
-                }else{
-                    screen1.value += ')';
-                    bracket = false;
-                }
             }else if(symbol == '×'){
                 screen1.value += '*';
             }else if(symbol == '÷'){
@@ -55,27 +45,48 @@ function calculate(screen0,screen1){
         }
         //计算结果
         else if(symbol == '='){
-            screen0.value = screen1.value;
-            var text = screen1.value;
-
-            if(!text){
+            if(!screen1.value){
                 return null;
             }else{
-                var result = null,
-                    sum = null,
-                    arr = [],
-                    flag = 0;
-                for(var i = 0; i < text.length; i++){
-                    if(typeof text[i] == 'number'){
-                        sum += text[i];
-                    }else{
-                        arr.push(sum);
-                        arr.push(text[i]);
-                        flag = i;
-                        sum = null;
+                screen0.value = screen1.value;
+                screen1.value = count(screen1.value);
+            }
+        }
+    }
+}
+
+function count(text) {
+    //首先寻找最右左括号
+    var index1 = text.lastIndexOf("(");
+    if(index > -1) {
+        //寻找同组右括号
+        var endIndex = text.indexOf(")", index1);
+        if(endIndex > -1) {
+            //算出括号中的结果
+            var result = count(text.substring(index1 + 1, endIndex));
+            //继续计算表达式
+            text = count(text.substring(0, index1) + result + text.substring(endIndex + 1));
+        }
+    }else{
+        var index2 = text.indexOf("+");
+        if (index2 > -1) {
+            text = count(text.substring(0, index2)) + count(text.substring(index2 + 1));
+        }else{
+            var index3 = text.lastIndexOf("-");
+            if (index3 > -1) {
+                text = count(text.substring(0, index3)) -count(text.substring(index3 + 1));
+            }else{
+                var index4 = text.lastIndexOf("*");
+                if (index4 > -1) {
+                    text = count(text.substring(0, index4)) * count(text.substring(index4 + 1));
+                }else{
+                    var index5 = text.lastIndexOf("/");
+                    if (index5 > -1) {
+                        text = count(text.substring(0, index5)) / count(text.substring(index5 + 1));
                     }
                 }
             }
         }
     }
+    return text;
 }
