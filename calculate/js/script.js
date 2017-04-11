@@ -49,33 +49,47 @@ function calculate(screen0,screen1){
 function test(text) {
     var index = 0;   //记录符号索引
 
+    while(text){
         //首先计算括号内内容
-    if(text.lastIndexOf("(") > -1){
-        index = text.lastIndexOf("(");
-        var endIndex = text.indexOf(")", index);
-        if(endIndex > -1) {
-            var result = test(text.substring(index + 1, endIndex));
-            return test(text.substring(0, index) + result + text.substring(endIndex + 1));
+        if(text.lastIndexOf("(") > -1){
+            index = text.lastIndexOf("(");
+            var endIndex = text.indexOf(")", index);
+            if(endIndex > -1) {
+                var result = test(text.substring(index + 1, endIndex));
+                return Math.formatFloat(test(text.substring(0, index) + result + text.substring(endIndex + 1)) ,2);
+            }
+
+        }else if(text.indexOf("+") >-1){
+            index = text.indexOf("+");
+            return Math.formatFloat(test(text.substring(0, index)) + test(text.substring(index + 1)) ,2);
+
+        }else if(text.lastIndexOf("-") > -1){
+            index = text.lastIndexOf("-");
+            if(text[index-1] == '*'){
+                return Math.formatFloat(test(text.substring(0, index-1)) * test(text.substring(index)) ,2);
+            }else if(text[index-1] == '/'){
+                return Math.formatFloat(test(text.substring(0, index-1)) / test(text.substring(index)) ,2);
+            }else{
+                return Math.formatFloat(test(text.substring(0, index)) - test(text.substring(index + 1)) ,2);
+            }
+
+        }else if(text.lastIndexOf("*") > -1){
+                index = text.lastIndexOf("*");
+            return Math.formatFloat(test(text.substring(0, index)) * test(text.substring(index + 1)) ,2);
+
+        }else if(text.lastIndexOf("/") > -1){
+            index = text.lastIndexOf("/");
+            return Math.formatFloat(test(text.substring(0, index)) / test(text.substring(index + 1)) ,2);
+
+        }else{
+            return Math.formatFloat(text,2);
         }
-
-    }else if(text.indexOf("+") >-1){
-        index = text.indexOf("+");
-        return test(text.substring(0, index)) + test(text.substring(index + 1));
-
-    }else if(text.lastIndexOf("-") > -1){
-        index = text.lastIndexOf("-");
-        return test(text.substring(0, index)) - test(text.substring(index + 1));
-
-    }else if(text.indexOf("*") > -1){
-        index = text.indexOf("*");
-        return test(text.substring(0, index)) * test(text.substring(index + 1));
-
-    }else if(text.lastIndexOf("/") > -1){
-        index = text.lastIndexOf("/");
-        return test(text.substring(0, index)) / test(text.substring(index + 1));
-
-    }else{
-        return Number(text);
     }
+
+    return null;
 }
 
+Math.formatFloat = function (exp, digit){
+    var m = Math.pow(10, digit);
+    return parseInt(exp*m, 10)/m;
+};
