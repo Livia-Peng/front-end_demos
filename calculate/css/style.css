@@ -3,9 +3,7 @@
     padding: 0;
     font-family: "Consolas", "Menlo", "Courier", monospace;
 }
-
-span{display: block}
-
+span{display: block;}
 body{background: #f0f2f1;}
 
 #box{

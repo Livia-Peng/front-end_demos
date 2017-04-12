@@ -14,19 +14,18 @@ function calculate(screen0,screen1){
         count = 0;                             //记录显示器字符或数字个数
 
     box.onclick = function(e){
-        var symbol = e.target.innerText;           //获取按钮字符
+        var symbol = e.target.innerText;       //获取按钮字符
+
+        //内容是否超过允许长度
         if((screen1.value + symbol).length > 40){
             alert('Content exceeds the maximum length!');
             return null;
         }
-        //清零
-        if(symbol == 'C'){
+        if(symbol == 'C'){          //清零
             count = 0;
             screen0.value = null;
             screen1.value = null;
-        }
-        //表达式
-        else if(symbol != '='){
+        }else if(symbol != '='){   //表达式
             if(symbol == 'DEL'){
                 if(screen1.value == null){
                     count = 0;
@@ -37,9 +36,7 @@ function calculate(screen0,screen1){
             }else{
                 screen1.value += symbol;
             }
-        }
-        //计算结果
-        else if(symbol == '='){
+        }else if(symbol == '='){   //计算结果
             screen0.value = screen1.value;
             screen1.value = test(screen1.value);
         }
@@ -55,7 +52,7 @@ function test(text) {
             index = text.lastIndexOf("(");
             var endIndex = text.indexOf(")", index);
             if(endIndex > -1) {
-                var result = test(text.substring(index + 1, endIndex));
+                var result = Math.formatFloat(test(text.substring(index + 1, endIndex)) ,2);
                 return Math.formatFloat(test(text.substring(0, index) + result + text.substring(endIndex + 1)) ,2);
             }
 
