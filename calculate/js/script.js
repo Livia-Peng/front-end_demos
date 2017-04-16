@@ -21,12 +21,16 @@ function calculate(screen0,screen1){
             alert('Content exceeds the maximum length!');
             return null;
         }
-        if(symbol == 'C'){          //清零
+        if(symbol == 'C' ){          //清零
             count = 0;
             screen0.value = null;
             screen1.value = null;
         }else if(symbol != '='){   //表达式
-            if(symbol == 'DEL'){
+            if(count == -1){
+                screen0.value += "=" + screen1.value;
+                screen1.value = symbol;
+                count = 1;
+            }else if(symbol == 'DEL'){
                 if(screen1.value == null){
                     count = 0;
                 }else{
@@ -38,12 +42,13 @@ function calculate(screen0,screen1){
             }
         }else if(symbol == '='){   //计算结果
             screen0.value = screen1.value;
-            screen1.value = test(screen1.value);
+            screen1.value = test(screen1.value );
+            count = -1;
         }
     }
 }
 
-function test(text) {
+function test(text ) {
     var index = 0;   //记录符号索引
 
     while(text){
