@@ -5,11 +5,124 @@
     <title>弹出层效果</title>
     <style>
         *{margin: 0;padding: 0;}
-        #box{}
+        button{
+            width: 130px;
+            height: 35px;
+            margin-top: 200px;
+            margin-left: auto;
+            margin-right: auto;
+            display: block;
+            font-size: 15px;
+            border-style: none;
+            border-radius: 5px;
+            cursor: pointer;
+            background: #e1e1e1;
+        }
+        #pop_up{
+            background: #333;
+            position: absolute;
+            opacity:0.5;
+            filter: alpha(opacity=50);
+            top:0;
+            left: 0;
+            z-index: 1000;
+        }
+        #box{
+            position: fixed;
+            z-index: 1002;
+        }
+        .content{
+            width:400px;
+            height:200px;
+            margin: 0 auto;
+            background:#ffffff;
+            position: relative;
+            cursor: move;
+            -moz-border-radius: 5px;
+            -webkit-border-radius: 5px;
+            border-radius: 5px;
+        }
+        #close{
+            width: 30px;
+            height: 30px;
+            background: url("close.png") no-repeat;
+            position: absolute;
+            cursor: pointer;
+            right: 10px;
+            top: 10px;
+        }
+
     </style>
-    <script></script>
+    <script>
+        window.onload = function(){
+            var btn = document.getElementById('clk');
+            btn.onclick = function(){
+                pop_up();
+            };
+        };
+        function pop_up(){
+            //获取页面可视区高宽
+            var oWidth = document.documentElement.clientWidth;
+            var oHeight = document.documentElement.clientHeight;
+
+            //创建阴影背景节点
+            var oParent = document.createElement('div');
+            oParent.id = 'pop_up';
+            oParent.style.width = oWidth +'px';
+            oParent.style.height = oHeight +'px';
+            document.body.appendChild(oParent);
+
+            //创建弹出层节点
+            var oChild = document.createElement('div');
+            oChild.id = "box";
+            oChild.innerHTML = "<div class='content'><div id='close'></div></div>";
+            document.body.appendChild(oChild);
+
+            //设置居中显示
+            var cWidth = oChild.offsetWidth;
+            var cHeight = oChild.offsetHeight;
+            oChild.style.left=oWidth/2-cWidth/2+"px";
+            oChild.style.top=oHeight/2-cHeight/2+"px";
+
+            //关闭弹出层
+            var close = document.getElementById('close');
+            close.onclick = function(){
+                document.body.removeChild(oParent);
+                document.body.removeChild(oChild);
+            };
+
+            //移动弹出框
+            var move = false;
+            var _x, _y;          //记录鼠标相对弹出框的left、top
+            var x, y;            //记录弹出框相对页面的left、top，以便判断
+            oChild.onmousedown = function(e){
+                move = true;
+                _x = e.pageX - parseInt(oChild.style.left);
+                _y = e.pageY - parseInt(oChild.style.top);
+            };
+            oChild.onmousemove = function(e){
+                if(move){
+                    x = e.pageX - _x;
+                    y = e.pageY - _y;
+                    if(x < 0) x = 0;
+                    if(y < 0) y = 0;
+                    if(x > oWidth- cWidth)  x = oWidth- cWidth;
+                    if(y > oHeight - cHeight)  y = oHeight - cHeight;
+                    oChild.style.left = x + 'px';
+                    oChild.style.top = y + 'px';
+                }
+            };
+            oChild.onmouseup = function() {
+                move = false;
+            };
+            oChild.onmouseout = function() {
+                move = false;
+            };
+        }
+
+    </script>
 </head>
 <body>
-
+<button id="clk">点击查看弹窗</button>
 </body>
 </html>
