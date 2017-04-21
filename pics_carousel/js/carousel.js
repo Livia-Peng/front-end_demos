@@ -12,7 +12,7 @@ window.onload = function(){
     var turned = false;
     var time;
 
-    //箭头切换函数
+    //图片切换函数
     function turn(offset){
         turned = true;
         var new_left = parseInt(pics.style.left) + offset;
@@ -38,7 +38,7 @@ window.onload = function(){
         go();
     }
 
-    //按钮变化实现
+    //按钮切换样式
     function show_dots(){
         for(var i = 0; i < dots.length; i++){
             if(dots[i].className == 'on'){
@@ -48,6 +48,47 @@ window.onload = function(){
         }
         dots[index - 1].className = 'on';
     }
+    //按钮切换实现
+    for(var i = 0; i < dots.length; i++){
+        if(!turned){
+            dots[i].onclick= function(){
+                if(this.className == 'on'){
+                    return;
+                }
+                var my_index = parseInt(this.getAttribute('index'));   //注意! index是自定义属性
+                var offset = -600 * (my_index - index);
+
+                turn(offset);
+                index = my_index;
+                show_dots();
+            }
+        }
+    }
+
+
+    //箭头切换
+    next.onclick = function(){
+        if(!turned){
+            if(index == 7){
+                index = 1;
+            }else{
+                index += 1;
+            }
+            show_dots();
+            turn(-600);
+        }
+    };
+    pre.onclick = function(){
+        if(!turned){
+            if(index == 1){
+                index = 7;
+            }else{
+                index -= 1;
+            }
+            show_dots();
+            turn(600);
+        }
+    };
 
     //定时动画
     function play(){
@@ -55,7 +96,6 @@ window.onload = function(){
             next.onclick();
         },3000);
     }
-
     //动画停止
     function stop(){clearInterval(time);}
 
@@ -63,46 +103,7 @@ window.onload = function(){
     box.onmouseover = stop;
     box.onmouseout = play;
 
-    //箭头切换
-    next.onclick = function(){
-        if(index == 7){
-            index = 1;
-        }else{
-            index += 1;
-        }
-        show_dots();
-        if(!turned){
-            turn(-600);
-        }
-    };
-    pre.onclick = function(){
-        if(index == 1){
-            index = 7;
-        }else{
-            index -= 1;
-        }
-        show_dots();
-        if(!turned){
-            turn(600);
-        }
-    };
 
-    //按钮切换
-    for(var i = 0; i < dots.length; i++){
-        dots[i].onclick= function(){
-            if(this.className == 'on'){
-                return;
-            }
-            var my_index = parseInt(this.getAttribute('index'));   //注意! index是自定义属性
-            var offset = -600 * (my_index - index);
-
-            if(!turned){
-                turn(offset);
-            }
-            index = my_index;
-            show_dots();
-        }
-    }
 };
 
 
