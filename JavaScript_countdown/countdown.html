@@ -16,9 +16,8 @@
 <script language="JavaScript"  type="text/javascript">
     //补位处理
     function checkTime(i){
-        if(i<10){
-            i='0'+i;
-        }
+        var len = i.toString();
+        if( len.length == 1) i='0'+i;
         return i;
     }
 
