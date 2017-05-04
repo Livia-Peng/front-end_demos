@@ -16,8 +16,7 @@
 <script language="JavaScript"  type="text/javascript">
     //补位处理
     function checkTime(i){
-        var len = i.toString();
-        if( len.length == 1) i='0'+i;
+        if( i < 10 ) i='0'+i;
         return i;
     }
 
@@ -29,10 +28,6 @@
         var h=  now.getHours() ;         //返回小时（0-23）
         var m=  now.getMinutes() ;       //返回分钟
         var s=  now.getSeconds()  ;      //返回秒数
-
-        h=checkTime(h);
-        m=checkTime(m);
-        s=checkTime(s);
 
         var weekday= ["星期日", "星期一", "星期二", "星期三", "星期四", "星期五","星期六"];
 
