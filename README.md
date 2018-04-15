@@ -1,10 +1,10 @@
 # front-end_demos
-前端小项目练习
+前端小项目练习，原生实现无框架
 
 
 
 
-# 实例demo
+## 实例demo
 
 Canvas实现时钟效果：https://livia-peng.github.io/test_demo/clock/clock.html
 
