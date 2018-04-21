@@ -1,0 +1,214 @@
+*{margin: 0;padding: 0;font-family: "Microsoft yahei", sans-serif}
+a{text-decoration: none;color: inherit;}
+a:hover{text-decoration: underline;}
+li{list-style-type: none;}
+
+/*common style*/
+.contain{width: 900px;height: inherit;margin: 0 auto;position: relative;}
+.title{
+    height: 36px;
+    text-align: center;
+    margin-top: 30px;
+    margin-left: auto;
+    margin-right: auto;
+    font-size: 24px;
+    font-family: "Consolas", "Monaco", "Bitstream Vera Sans Mono", "Courier New", Courier, monospace;
+    color: #000;
+}
+.content{
+    width: 900px;
+    margin: 0 auto;
+    font-size: 16px;
+    line-height: 20px;
+    text-align: center;
+    color: #333;
+}
+
+/*顶部*/
+#top{
+    width: 100%;
+    height: 80px;
+    background: #fff;
+    box-shadow: 0 2px 5px #a5a5a5;
+    z-index: 10;
+    position: fixed;
+    top: 0;
+}
+#top img{height: 80px;}
+.nav{float: right;}
+.nav li{
+    width: auto;
+    height: 80px;
+    font-family: "Consolas", "Monaco", "Bitstream Vera Sans Mono", "Courier New", Courier, monospace;
+    font-size: 18px;
+    font-weight: 600;
+    color: #333;
+    line-height: 75px;
+    float: left;
+    padding: 0 15px;
+    cursor: pointer;
+}
+.nav .on{color: #b81900;background: #f0f2f1}
+.nav li:hover{background: #f0f2f1;}
+
+/*焦点图*/
+#show{width: 100%;height: 345px;background: #fff;position: absolute;top: 80px;}
+#box1{
+    width: 900px;
+    height: inherit;
+    margin: 0 auto;
+    position: relative;
+    overflow: hidden;
+}
+#pics{
+    width: 6300px;
+    height: 345px;
+    position: absolute;
+    z-index: 2;
+}
+#pics img{width: 900px;float: left;}
+#dots{
+    width: 120px;
+    height: 12px;
+    position: absolute;
+    bottom: 25px;
+    left: 46%;
+    z-index: 3;
+}
+#dots span{
+    width: 10px;
+    height: 10px;
+    float: left;
+    margin-right: 10px;
+    background: #333;
+    border: solid 1px #FFF;
+    border-radius: 50%;
+    cursor: pointer;
+}
+#dots .on{background: orangered;}
+#dots span:hover{background: orangered;}
+.turn{
+    width: 40px;
+    height: 40px;
+    color: #fff;
+    background: grey;
+    line-height: 39px;
+    text-align: center;
+    font-size: 36px;
+    font-weight: bold;
+    opacity: 0.5;
+    position: absolute;
+    top: 150px;
+    z-index: 4;
+    cursor: pointer;
+}
+.turn:hover{opacity: 0.8}
+#pre{left: 20px;}
+#next{right: 20px;}
+
+/*简介部分*/
+#profile{
+    width: 100%;
+    height: 146px;
+    background: #fff;
+    position: absolute;
+    top:425px;
+}
+
+/*about us*/
+#about{
+    width: 100%;
+    height: 446px;
+    background: url("../images/bg1.jpg") center;
+    position: absolute;
+    top:570px;
+    z-index: 8;
+    box-shadow: 0 2px 5px #a5a5a5;
+}
+.box2{
+    width: 205px;
+    height: 300px;
+    background: #fff;
+    margin: 20px 10px;
+    float: left;
+    border-radius: 5px;
+}
+.box2 img{margin: 0 auto;display: block;height: 100px;}
+.box2 span{width: 205px;font-size: 16px;text-align: center;display: block;}
+.box2 p{
+    margin: 10px auto;
+    height: 105px;
+    background: #f0f2f1;
+    padding: 10px;
+    font-size: 14px;
+    color: #333;
+    text-align: center;
+    line-height: 20px;
+    font-family: "Consolas", "Monaco", "Bitstream Vera Sans Mono", "Courier New", Courier, monospace;
+}
+.box2 a{width: 180px;font-size: 16px;text-align: right;display: block;color: #b81900;}
+
+/*公司业务*/
+#service{
+    width: 100%;
+    height: 280px;
+    background: #fff;
+    position: absolute;
+    top:1015px;
+}
+.box3{
+    width: 280px;
+    height: 135px;
+    margin: 20px 15px;
+    float: left;
+    border-top: 2px solid #b81900;
+    /*border-bottom: 2px solid #b81900;*/
+}
+.box3 img{height: 135px;border-radius: 5px;}
+.box3 li{
+    width: auto;
+    height: 10px;
+    font-family: "Consolas", "Monaco", "Bitstream Vera Sans Mono", "Courier New", Courier, monospace;
+    font-size: 16px;
+    color: #333;
+    padding: 10px 5px;
+}
+
+/*统计资料*/
+#statistic{
+    width: 100%;
+    height: 250px;
+    background: url("../images/bg2.jpg") center;
+    position: absolute;
+    top:1295px;
+    z-index: 8;
+    box-shadow: 0 2px 5px #a5a5a5;
+}
+.box4{
+    width: 205px;
+    height: 100px;
+    margin: 25px 10px;
+    text-align: center;
+    color: #fff;
+    float: left;}
+.box4 span{font-size: 42px;}
+.box4 p{font-size: 18px;}
+
+/*contact us*/
+#contact{
+    width: 100%;
+    height: 180px;
+    background: #fff;
+    position: absolute;
+    top:1545px;
+}
+#contact span{width: 900px;margin-top:130px;font-size: 14px;color: #000;text-align: center;display: block;}
+.box5{
+    width: 205px;
+    height: 100px;
+    margin: 10px 10px;
+    float: left;
+    /*background: #f0f2f1;*/
+}
+.box5 img{width: 60px;border-radius: 50%;margin: 0 auto;display: block;}
+.box5 p{width: 180px;margin: 10px auto;font-size: 16px;color: #333;text-align: center;}
