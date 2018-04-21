@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>在线答题系统index</title>
+
+    <link href="css/index_style.css" rel="stylesheet" type="text/css" />
+    <script src="js/jquery-1.8.3.min.js"></script>
+    <script src="js/index_js.js"></script>
+
+</head>
+<body>
+<div class="top"><span>在 线 答 题 系 统</span></div>
+<div class="main">
+    <div class="main-course-tl"><span>Course课程选择</span></div>
+    <div>
+        <div class="main-course" id="course1">
+            <div class="main-course-box" id="1"><a href="#" onclick="course0_chapter0()">计算机网络</a></div>
+            <div class="main-course-box" id="2"><a href="#">操作系统</a></div>
+            <div class="main-course-box" id="3"><a href="#">计算机组成原理</a></div>
+            <div class="main-course-box" id="4"><a href="#" onclick="course1_chapter1()">C语言程序设计</a></div>
+            <table>
+                <tr>
+                    <td><a href="#"><img src="images/pre.png"  onclick="course0_click()"/></a></td>
+                    <td><a href="#"><img src="images/next.png" onclick="course1_click()"/></a></td>
+                </tr>
+            </table>
+        </div>
+        <div class="main-course" id="course2" style="display: none">
+            <div class="main-course-box" id="5"><a href="#">高等数学</a></div>
+            <div class="main-course-box" id="6"><a href="#">大学物理</a></div>
+            <div class="main-course-box" id="7"><a href="#">线性代数</a></div>
+            <div class="main-course-box" id="8"><a href="#">复变函数</a></div>
+            <table>
+                <tr>
+                    <td><a href="#"><img src="images/pre.png" onclick="course0_click()"/></a></td>
+                    <td><a href="#"><img src="images/next.png" onclick="course1_click()"/></a></td>
+                </tr>
+            </table>
+        </div>
+
+        <!--计算机网络-->
+        <div class="main-chapter" id="chapter1">
+            <div class="main-chapter-box1">
+                <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;计算机网络，是指将地理位置不同的具有独立功能的多台计算机及其外部设备，通过通信线路连接起来，在网络操作系统，网络管理软件及网络通信协议的管理和协调下，实现资源共享和信息传递的计算机系统。</p>
+            </div>
+            <div class="main-chapter-box2">
+                <a href="#"><img src="images/pre2.png" style=" margin-left: 20px;" onclick="chapter0_click()"/></a>
+                <a href="#"><img src="images/next2.png" style=" margin-left: 60px;" onclick="chapter1_click()"/></a>
+            </div>
+            <!--前五章-->
+            <ul style="display:block">
+                <li class="main-chapter-box3">
+                    <span>One</span><br/>
+                    <strong><a href="#">概述</a></strong>
+                </li>
+                <li class="main-chapter-box4">
+                    <span>Two</span><br/>
+                    <strong><a href="#">物理层</a></strong>
+                </li>
+                <li class="main-chapter-box5">
+                    <span>Three</span><br/>
+                    <strong><a href="#">数据链路层</a></strong>
+                </li>
+                <li class="main-chapter-box6">
+                    <span>Four</span><br/>
+                    <strong><a href="#" >网络层</a></strong>
+                </li>
+                <li class="main-chapter-box7">
+                    <span>Five</span><br/>
+                    <strong><a href="http://localhost:63342/htdocs/onlineANS/answer.html" target="_blank">运输层</a></strong>
+                </li>
+            </ul>
+            <!--后五章-->
+            <ul style="display: none">
+                <li class="main-chapter-box3">
+                    <span>Six</span><br/>
+                    <strong><a href="#">应用层</a></strong>
+                </li>
+                <li class="main-chapter-box4">
+                    <span>Seven</span><br/>
+                    <strong><a href="#">网络安全</a></strong>
+                </li>
+                <li class="main-chapter-box5">
+                    <span>Eight</span><br/>
+                    <strong><a href="#">因特网上的服务</a></strong>
+                </li>
+                <li class="main-chapter-box6">
+                    <span>Nine</span><br/>
+                    <strong><a href="#">无线网络和移动网络</a></strong>
+                </li>
+                <li class="main-chapter-box7">
+                    <span>Ten</span><br/>
+                    <strong><a href="#">下一代因特网</a></strong>
+                </li>
+            </ul>
+        </div>
+        <!--C语言程序设计-->
+        <div class="main-chapter" id="chapter2" style="display: none">
+            <div class="main-chapter-box1">
+                <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;C语言是一种计算机程序设计语言。它既有高级语言的特点，又具有汇编语言的特点。它可以作为系统设计语言，编写工作系统应用程序，也可以作为应用程序设计语言，编写不依赖计算机硬件的应用程序。</p>
+            </div>
+            <div class="main-chapter-box2">
+                <a href="#"><img src="images/pre2.png" style=" margin-left: 20px;" onclick="chapter0_click()"/></a>
+                <a href="#"><img src="images/next2.png" style=" margin-left: 60px;" onclick="chapter1_click()"/></a>
+            </div>
+            <!--前五章-->
+            <ul style="display:block">
+                <li class="main-chapter-box3">
+                    <span>One</span><br/>
+                    <strong><a href="#">程序设计和C语言</a></strong>
+                </li>
+                <li class="main-chapter-box4">
+                    <span>Two</span><br/>
+                    <strong><a href="#">算法——程序的灵魂</a></strong>
+                </li>
+                <li class="main-chapter-box5">
+                    <span>Three</span><br/>
+                    <strong><a href="#" target="_blank">最简单的C程序设计</a></strong>
+                </li>
+                <li class="main-chapter-box6">
+                    <span>Four</span><br/>
+                    <strong><a href="#" >选择结构程序设计</a></strong>
+                </li>
+                <li class="main-chapter-box7">
+                    <span>Five</span><br/>
+                    <strong><a href="#">循环结构程序设计</a></strong>
+                </li>
+            </ul>
+            <!--后五章-->
+            <ul style="display:none">
+                <li class="main-chapter-box3">
+                    <span>Six</span><br/>
+                    <strong><a href="#">利用数组处理批量数据</a></strong>
+                </li>
+                <li class="main-chapter-box4">
+                    <span>Seven</span><br/>
+                    <strong><a href="#">用函数实现模块化程序设计</a></strong>
+                </li>
+                <li class="main-chapter-box5">
+                    <span>Eight</span><br/>
+                    <strong><a href="#">善于利用指针</a></strong>
+                </li>
+                <li class="main-chapter-box6">
+                    <span>Nine</span><br/>
+                    <strong><a href="#">用户自己建立数据类型</a></strong>
+                </li>
+                <li class="main-chapter-box7">
+                    <span>Ten</span><br/>
+                    <strong><a href="#">对文件的输入输出</a></strong>
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>
+</body>
+</html>

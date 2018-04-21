@@ -1,0 +1,147 @@
+
+html,body {
+    margin: 0;
+    height: 100%;
+    font-family: Courier;
+}
+body{
+    width:100%;
+    height:100%;
+    margin:0;
+    padding:0;
+    background: url(../images/5.jpg) center center;
+    background-repeat:no-repeat;
+    overflow:hidden;
+}
+
+.bg{
+    width: 960px;
+    height: 100%;
+    margin-top: 0;
+    margin-left: auto;
+    margin-right: auto;
+    background:#FFFAFA;
+    overflow-y: auto;
+}
+
+.top_pic{
+    position:fixed;
+    margin-left: 50%;
+    height:140px;
+}
+.box{
+    width: 860px;
+    height: 100%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.course_title{
+    padding-top: 15px;
+    margin-left: 5px;
+    color: #056daa;
+    font-weight: 600;
+    font-size: 18px;
+}
+.line{
+    height: 1px;
+    width: 100%;
+    margin-top: 5px;
+    background:#F5F5F5 	;
+}
+.chapter_title{
+    margin-top: 30px ;
+    margin-left:40%;
+    margin-bottom: 30px;
+    color: #696969;
+    font-weight: 600;
+    font-size: 22px;
+}
+
+.single_choice{}
+.true_false{}
+
+.question_type{
+    height: 30px;
+    background: #F5F5F5;
+    overflow: hidden;
+    padding-top: 8px;
+    padding-left: 15px;
+    color: #056daa;
+    font-weight: 600;
+    font-size: 16px;
+}
+
+.question_box{
+    height: auto;
+    margin-top: 15px;
+    margin-bottom: 15px;
+    border: solid 1px #FFE4B5;
+    font-size: 15px;
+}
+
+.question_title{
+    padding-left: 20px;
+    color:#D2691E;
+}
+.consult_answer{
+    padding-left: 45px;
+    color: #696969;
+    line-height: 8px;
+}
+
+.true_answer{
+    width: 820px;
+    height: 30px;
+    margin-left: 20px;
+    margin-bottom: 15px;
+    padding-top:8px ;
+    color: #696969;
+    font-size: 18px;
+    font-weight: 600;
+    background:#FAF0E6;
+    border:dotted 1px #FFE4B5;
+}
+
+.true_answer input{
+    margin-left: 20px;
+}
+.true_answer span{
+    font-size: 15px;
+}
+.bottom-btn{
+    width:170px;
+    height:30px;
+    margin-top: 30px;
+    margin-left: 41%;
+    margin-bottom:50px;
+    border:none;
+    background: #D2691E;
+    color:#ffffff;
+    font-size: 17px;
+    -moz-border-radius: 5px;
+    -webkit-border-radius: 5px;
+    border-radius: 5px;
+}
+
+.box img{
+    height:140px;
+    margin-top: 30px;
+}
+.box table{
+    width: 73%;
+    height: auto;
+    margin-top: 70px;
+    margin-bottom: 15px;
+    padding-top: 10px;
+    padding-left: 70px;
+    padding-bottom: 10px;
+    float: right;
+    background:#FAF0E6;
+    color:#D2691E;
+    text-align: left;
+    font-size: 18px;
+}
+.box table span{
+    margin-left: 10%;
+}

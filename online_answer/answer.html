@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>在线答题answer</title>
+
+    <link href="css/answer_style.css" rel="stylesheet" type="text/css" />
+    <script src="js/jquery-1.8.3.min.js"></script>
+    <script src="js/answer_js.js"></script>
+
+</head>
+<body>
+<div class="bg">
+    <img class="top_pic" src="images/flower.png" />
+
+    <div class="box" id="1" >
+        <div class="course_title">计算机网络</div>
+        <div class="line"></div>
+        <div class="chapter_title">第五章、运输层</div>
+        <div class="single_choice" >
+            <div class="question_type">一、单选题</div>
+
+            <div class="question_box">
+                <div class="question_title">
+                    <h4>1、在以太网中，是根据______地址来区分不同的设备的.</h4>
+                </div>
+                <div class="consult_answer">
+                    <h4>A.LLC地址 </h4>
+                    <h4>B.MAC地址</h4>
+                    <h4>C.IP地址</h4>
+                    <h4>D.IPX地址</h4>
+                </div>
+                <form class="true_answer">
+                    <input type="radio" name="Q1" value="A" />A
+                    <input type="radio" name="Q1" value="*" />B
+                    <input type="radio" name="Q1" value="C" />C
+                    <input type="radio" name="Q1" value="D" />D
+                </form>
+            </div>
+            <div class="question_box">
+                <div class="question_title">
+                    <h4>2、TCP 和 UDP 协议的相似之处是</h4>
+                </div>
+                <div class="consult_answer">
+                    <h4>A.面向连接的协议</h4>
+                    <h4>B.面向非连接的协议</h4>
+                    <h4>C.都是传输层协议</h4>
+                    <h4>D.以上均不对</h4>
+                </div>
+                <form class="true_answer" onclick="">
+                    <input type="radio" name="Q2" value="A" />A
+                    <input type="radio" name="Q2" value="B" />B
+                    <input type="radio" name="Q2" value="*" />C
+                    <input type="radio" name="Q2" value="D" />D
+                </form>
+            </div>
+            <div class="question_box">
+                <div class="question_title">
+                    <h4>3、在数据通信中，当发送数据出现差错时，发送端无需进行数据重发的差错控制方法为</h4>
+                </div>
+                <div class="consult_answer">
+                    <h4>A. ARQ</h4>
+                    <h4>B. FEC</h4>
+                    <h4>C. BEC</h4>
+                    <h4>D. CRC</h4>
+                </div>
+                <form class="true_answer">
+                    <input type="radio" name="Q3" value="A"/>A
+                    <input type="radio" name="Q3" value="*"/>B
+                    <input type="radio" name="Q3" value="C"/>C
+                    <input type="radio" name="Q3" value="D"/>D
+                </form>
+            </div>
+        </div>
+        <div class="blank_filling">
+            <div class="question_type">二、判断题</div>
+
+            <div class="question_box">
+                <div class="question_title">
+                    <h4>4、通过引入CRC校验以及确认和重传机制，使得网络可实现可靠的数据传输。</h4>
+                </div>
+                <form class="true_answer">
+                    <input type="radio" name="Q4" value="是"><span>是</span>
+                    <input type="radio" name="Q4" value="*" ><span>否</span>
+                </form>
+            </div>
+            <div class="question_box">
+                <div class="question_title">
+                    <h4>5、ARP的请求和应答报文都是一对一的，这样可以进行正确解析。</h4>
+                </div>
+                <div class="true_answer">
+                    <input type="radio" name="Q5" value="*" ><span>是</span>
+                    <input type="radio" name="Q5" value="否" ><span>否</span>
+                </div>
+            </div>
+        </div>
+        <input type="button" class="bottom-btn" value="提  交" onclick="score_check()">
+    </div>
+
+    <div class="box" id="2" style="display: none">
+        <div class="course_title">计算机网络</div>
+        <div class="line"></div>
+        <div class="chapter_title" >第五章、运输层</div>
+        <div class="question_type" style="padding-left: 48px">答题成绩</div>
+        <img src="images/1.png" />
+        <table>
+            <tr>
+                <td>试题满分：<span>100</span></td>
+                <td>测试题数：<span>5</span></td>
+            </tr>
+            <tr>
+                <td>您的得分：<span id="s"></span></td>
+                <td>答对题数：<span id="q"></span></td>
+            </tr>
+        </table>
+        <input type="button" class="bottom-btn" value="返回试题" style="margin-left: 25%;margin-top: 90px" onclick="return_test()">
+        <input type="button" class="bottom-btn" value="查看解析" style="margin-left: 5%;margin-top: 90px" onclick="">
+    </div>
+</div>
+</body>
+</html>
