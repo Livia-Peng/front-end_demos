@@ -1,0 +1,56 @@
+
+*{margin:0;padding:0;font-family: "微软雅黑";}
+
+.nav {width: 100%; background-color:#333333;position: fixed;text-shadow: 0 1px 0 rgba(255, 255, 255, 0.5);}
+.nav a{color: #ffffff;text-decoration:none}
+.nav li a{display: block;font-size:16px;text-align: center;padding: 20px 20px;}
+.nav.left{float: left;}
+.brand {display: block;float: left;text-align: center;padding:10px 30px ;margin-right: 25px;font-size: 18px;color: #777777;}
+.nav.right {float: right;}
+.user{font-size: 16px;color: #EEEEEE;float: right;text-align: center;padding:20px 10px 20px 0 ;}
+.clk1{list-style: none;float: left;}  /*导航栏点击效果*/
+.clk2{float: right;}   /*打开消息窗口*/
+.clk2 img {display: block;padding:12px 30px 3px 5px ;float: right;height:40px;width: auto;}
+
+.box1{
+    width: 220px;
+    height: 500px;
+    position: relative;
+    display: none;
+    overflow: hidden;
+    float: right;
+    margin-right:20px;
+    margin-top: 68px;
+    border: solid 2px #e1e1e1;
+}  /*消息界面盒子*/
+.fen1{height: 20px;font-size: 12px;background-color: #e1e1e1;}
+.clk3{width: 20px;height: 20px;float: right;}   /*关闭消息窗口*/
+.fen2{height: 70px;font-size: 14px;border-bottom: solid 8px #e1e1e1;}
+.fen3{height: 30px;font-size: 14px;border-bottom: solid 1px #e1e1e1;text-align: center}
+.clk4_1{width: 108px;padding-top: 5px;padding-bottom: 5px;float: left;background-color:#e1e1e1}    /*消息栏切换效果*/
+.clk4_2{width: 108px;padding-top: 5px;padding-bottom: 5px;float: right;}
+.fen4{height: 360px;font-size: 12px;overflow: auto}
+.fen4_left{padding-top: 5px;}
+.clk5{padding-top: 10px;border-bottom: solid 1px #e1e1e1;float: right;}    /*打开聊天窗口*/
+.fen4_right{display: none;padding: 10px 0 0 10px;}
+
+.box2{
+    width:620px;
+    height: 490px;
+    position: fixed;
+    display: none;
+    overflow: hidden;
+    margin-left: 25%;
+    margin-top: 100px;
+    box-shadow: 0 0 10px #888888;
+    border: solid 5px #e1e1e1;
+}  /*聊天窗口盒子*/
+.chat1{height: 70px;font-size: 14px;background-color: #e1e1e1;}
+.clk6{width: 20px;height: 20px;float: right;}   /*关闭聊天窗口*/
+.chat2{width: 490px;height: 280px;border-right: solid 5px #e1e1e1;}
+.chat3{width: 490px;height: 30px;border-right: solid 5px #e1e1e1;background-color:#e1e1e1; }
+.chat4{width: 490px;height: 75px;border-right: solid 5px #e1e1e1;}
+.chat4 textarea{width: 490px;height: 75px;font-size: 12px;padding-top: 2px ;padding-left: 2px;}
+.chat5{width: 490px;height: 35px;border-right: solid 5px #e1e1e1;background-color:#e1e1e1;}
+.chat5 button{width: 70px;height: 25px;margin: 2px;font-size: 12px; }
+.clk7   /*关闭聊天窗口*/
